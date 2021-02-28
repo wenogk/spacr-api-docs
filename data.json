@@ -1,0 +1,1425 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Insomnia",
+    "description": "",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://www.spacr.tk",
+      "variables": {}
+    },
+    {
+      "url": "https://spacr.ml/landingEndpoint",
+      "variables": {}
+    },
+    {
+      "url": "https://www.spacr.ml",
+      "variables": {}
+    },
+    {
+      "url": "https://graph.facebook.com/v9.0/3132892750099625",
+      "variables": {}
+    },
+    {
+      "url": "https://spacr-dev.herokuapp.com",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/travelListing": {
+      "get": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "List travelListings",
+        "description": "",
+        "operationId": "ListtravelListings",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "afterID",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "TN00007"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "2"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "TimePosted"
+            }
+          },
+          {
+            "name": "sortType",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "DESC"
+            }
+          },
+          {
+            "name": "listSpaceRequests",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "true"
+            }
+          },
+          {
+            "name": "timeOfTravel",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "past"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "open|full"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Land",
+        "description": "",
+        "operationId": "Land",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LandRequest"
+              },
+              "example": {
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NzlmYjIwYy1iMDliLTQ1OTAtOTU3MC1lMTIyYjZhZDIxMzEiLCJpYXQiOjE1OTgzNTczMzd9.-O0ISrwA4oUChyZ7hjrhlzvVCsw-qDqHAWA9zYqa5Uc"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://spacr.ml/landingEndpoint",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/user": {
+      "delete": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Delete User Permanently",
+        "description": "",
+        "operationId": "DeleteUserPermanently",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "List all users",
+        "description": "",
+        "operationId": "Listallusers",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "sortType",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "DESC"
+            }
+          },
+          {
+            "name": "activeOrPast",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "active"
+            }
+          },
+          {
+            "name": "afterID",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "RN000000"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "20"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/refreshToken": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Refresh token",
+        "description": "",
+        "operationId": "Refreshtoken",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshtokenRequest"
+              },
+              "example": {
+                "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDAzZDYxYy1jM2U5LTRhY2ItYmU5NC1iNTU1OTAxYzBkMmYiLCJpYXQiOjE2MTM4MTE4NTh9.pkAss_UNNzsrSR7kOM6vVYoFfMP-NHNr7_TcqbVdO3k"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/spaceRequest/initiate/": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Initiated - Create a Space Request",
+        "description": "",
+        "operationId": "Initiated-CreateaSpaceRequest",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "requestedSpace",
+                  "itemName",
+                  "itemDetails",
+                  "imageURL1",
+                  "deliveryAddress",
+                  "toCity",
+                  "toCountry",
+                  "fromCity",
+                  "fromCountry",
+                  "expectedPrice"
+                ],
+                "type": "object",
+                "properties": {
+                  "requestedSpace": {
+                    "type": "string",
+                    "example": "10"
+                  },
+                  "itemName": {
+                    "type": "string",
+                    "example": "a laptop"
+                  },
+                  "itemDetails": {
+                    "type": "string",
+                    "example": "cool laptop"
+                  },
+                  "imageURL1": {
+                    "type": "string",
+                    "example": "https://image.shutterstock.com/image-photo/isolate-modem-router-on-white-260nw-454079080.jpg"
+                  },
+                  "deliveryAddress": {
+                    "type": "string",
+                    "example": "Airport"
+                  },
+                  "toCity": {
+                    "type": "string",
+                    "example": "Muscat"
+                  },
+                  "toCountry": {
+                    "type": "string",
+                    "example": "OM"
+                  },
+                  "fromCity": {
+                    "type": "string",
+                    "example": "Dubai"
+                  },
+                  "fromCountry": {
+                    "type": "string",
+                    "example": "AE"
+                  },
+                  "expectedPrice": {
+                    "type": "string",
+                    "example": "23"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://spacr-dev.herokuapp.com",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/admin/notificationTest": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Test Notification",
+        "description": "",
+        "operationId": "TestNotification",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestNotificationRequest"
+              },
+              "example": {
+                "notificationCode": "N11",
+                "notificationParams": {
+                  "image": "https://picsum.photos/200/300.jpg",
+                  "tabToOpen": "SPACR_DASHBOARD"
+                },
+                "userID": "86d14482-d64b-4284-89a5-469dd3123668"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/admin/debug": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Debug endpoint",
+        "description": "",
+        "operationId": "Debugendpoint",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DebugendpointRequest"
+              },
+              "example": {
+                "tid": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/confirmation/update/RN0000010": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Update Confirmation as Traveller",
+        "description": "",
+        "operationId": "UpdateConfirmationasTraveller",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConfirmationasTravellerRequest"
+              },
+              "example": {
+                "itemHandoverToTravellerImageURL": "https://www.computerhope.com/jargon/r/random-dice.jpg",
+                "itemHandoverToRecieverImageURL": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/confirmation/confirm/RN0000010": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Update State as Sender",
+        "description": "",
+        "operationId": "UpdateStateasSender",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateStateasSenderRequest"
+              },
+              "example": {
+                "imageType": "itemHandoverToTravellerImageURL",
+                "confirmType": "reject"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/spaceRequest/": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Create a Space Request",
+        "description": "",
+        "operationId": "CreateaSpaceRequest",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "travelListingID",
+                  "requestedSpace",
+                  "itemName",
+                  "itemDetails",
+                  "imageURL1",
+                  "subTotal",
+                  "tax",
+                  "paymentMethod"
+                ],
+                "type": "object",
+                "properties": {
+                  "travelListingID": {
+                    "type": "string",
+                    "example": "TN00000007"
+                  },
+                  "requestedSpace": {
+                    "type": "string",
+                    "example": "10"
+                  },
+                  "itemName": {
+                    "type": "string",
+                    "example": "a modem"
+                  },
+                  "itemDetails": {
+                    "type": "string",
+                    "example": "an internet modem"
+                  },
+                  "imageURL1": {
+                    "type": "string",
+                    "example": "https://image.shutterstock.com/image-photo/isolate-modem-router-on-white-260nw-454079080.jpg"
+                  },
+                  "subTotal": {
+                    "type": "string",
+                    "example": "15"
+                  },
+                  "tax": {
+                    "type": "string",
+                    "example": "0"
+                  },
+                  "paymentMethod": {
+                    "type": "string",
+                    "example": "COD"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/travelListing/": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Create a Travel Listing",
+        "description": "",
+        "operationId": "CreateaTravelListing",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "fromCity",
+                  "fromCountry",
+                  "toCity",
+                  "toCountry",
+                  "imageURL1",
+                  "dateTimeOfTravel",
+                  "availableSpace",
+                  "pricePerKg"
+                ],
+                "type": "object",
+                "properties": {
+                  "fromCity": {
+                    "type": "string",
+                    "example": "Dubai"
+                  },
+                  "fromCountry": {
+                    "type": "string",
+                    "example": "AE"
+                  },
+                  "toCity": {
+                    "type": "string",
+                    "example": "Ragama"
+                  },
+                  "toCountry": {
+                    "type": "string",
+                    "example": "LK"
+                  },
+                  "imageURL1": {
+                    "type": "string",
+                    "example": "what"
+                  },
+                  "dateTimeOfTravel": {
+                    "type": "string",
+                    "example": "219037094271"
+                  },
+                  "availableSpace": {
+                    "type": "string",
+                    "example": "10"
+                  },
+                  "pricePerKg": {
+                    "type": "string",
+                    "example": "10"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/spaceRequest": {
+      "get": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "List spaceRequests of current user",
+        "description": "",
+        "operationId": "ListspaceRequestsofcurrentuser",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          },
+          {
+            "name": "sortType",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "DESC"
+            }
+          },
+          {
+            "name": "activeOrPast",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "active"
+            }
+          },
+          {
+            "name": "afterID",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "RN000000"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "20"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/spaceRequest/accept/RN00000010": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Accept a space request",
+        "description": "",
+        "operationId": "Acceptaspacerequest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/spaceRequest/reject/RN00000000037": {
+      "post": {
+        "tags": [
+          "Spacr"
+        ],
+        "summary": "Reject a space request",
+        "description": "",
+        "operationId": "Rejectaspacerequest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.ml",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/picture?type=large": {
+      "get": {
+        "tags": [
+          "Spacr-aws"
+        ],
+        "summary": "fb profile pic",
+        "description": "",
+        "operationId": "fbprofilepic",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://graph.facebook.com/v9.0/3132892750099625",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/media": {
+      "post": {
+        "tags": [
+          "Spacr-aws"
+        ],
+        "summary": "upload",
+        "description": "",
+        "operationId": "upload",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "multipart/form-data"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "image"
+                ],
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/media/url": {
+      "post": {
+        "tags": [
+          "Spacr-aws"
+        ],
+        "summary": "upload from url",
+        "description": "",
+        "operationId": "uploadfromurl",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/x-www-form-urlencoded"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "url"
+                ],
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "example": "https://www.spacr.ml/images/16115954510429863167484.jpeg"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/landingEndpoint/getAll": {
+      "post": {
+        "tags": [
+          "Spacr-aws"
+        ],
+        "summary": "My Request",
+        "description": "",
+        "operationId": "MyRequest",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MyRequestRequest"
+              },
+              "example": {
+                "secret": "2r5u8x/A?D(G+KbPeSgVkYp3s6v9y$BH@McQfTjWmZq4t7w!z%C*F-JaNdRgU"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "https://www.spacr.tk",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LandRequest": {
+        "title": "LandRequest",
+        "required": [
+          "refreshToken"
+        ],
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI1NzlmYjIwYy1iMDliLTQ1OTAtOTU3MC1lMTIyYjZhZDIxMzEiLCJpYXQiOjE1OTgzNTczMzd9.-O0ISrwA4oUChyZ7hjrhlzvVCsw-qDqHAWA9zYqa5Uc"
+        }
+      },
+      "RefreshtokenRequest": {
+        "title": "RefreshtokenRequest",
+        "required": [
+          "refreshToken"
+        ],
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDAzZDYxYy1jM2U5LTRhY2ItYmU5NC1iNTU1OTAxYzBkMmYiLCJpYXQiOjE2MTM4MTE4NTh9.pkAss_UNNzsrSR7kOM6vVYoFfMP-NHNr7_TcqbVdO3k"
+        }
+      },
+      "TestNotificationRequest": {
+        "title": "TestNotificationRequest",
+        "required": [
+          "notificationCode",
+          "notificationParams",
+          "userID"
+        ],
+        "type": "object",
+        "properties": {
+          "notificationCode": {
+            "type": "string"
+          },
+          "notificationParams": {
+            "type": "object"
+          },
+          "userID": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "notificationCode": "N11",
+          "notificationParams": {
+            "image": "https://picsum.photos/200/300.jpg",
+            "tabToOpen": "SPACR_DASHBOARD"
+          },
+          "userID": "86d14482-d64b-4284-89a5-469dd3123668"
+        }
+      },
+      "TestNotificationMultipleUsersRequest": {
+        "title": "TestNotificationMultipleUsersRequest",
+        "required": [
+          "multipleUsers",
+          "travelListingID",
+          "notificationCode",
+          "notificationParams",
+          "userID"
+        ],
+        "type": "object",
+        "properties": {
+          "multipleUsers": {
+            "type": "string"
+          },
+          "travelListingID": {
+            "type": "string"
+          },
+          "notificationCode": {
+            "type": "string"
+          },
+          "notificationParams": {
+            "type": "object"
+          },
+          "userID": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "multipleUsers": "true",
+          "travelListingID": "18",
+          "notificationCode": "N11",
+          "notificationParams": {
+            "image": "https://picsum.photos/200/300.jpg",
+            "tabToOpen": "SPACR_DASHBOARD",
+            "k": "l"
+          },
+          "userID": "86d14482-d64b-4284-89a5-469dd3123668",
+          "TravelListingID": 13
+        }
+      },
+      "DebugendpointRequest": {
+        "title": "DebugendpointRequest",
+        "required": [
+          "tid"
+        ],
+        "type": "object",
+        "properties": {
+          "tid": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "tid": 1
+        }
+      },
+      "UpdateConfirmationasTravellerRequest": {
+        "title": "UpdateConfirmationasTravellerRequest",
+        "required": [
+          "itemHandoverToTravellerImageURL",
+          "itemHandoverToRecieverImageURL"
+        ],
+        "type": "object",
+        "properties": {
+          "itemHandoverToTravellerImageURL": {
+            "type": "string"
+          },
+          "itemHandoverToRecieverImageURL": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "itemHandoverToTravellerImageURL": "https://www.computerhope.com/jargon/r/random-dice.jpg",
+          "itemHandoverToRecieverImageURL": ""
+        }
+      },
+      "UpdateStateasSenderRequest": {
+        "title": "UpdateStateasSenderRequest",
+        "required": [
+          "imageType",
+          "confirmType"
+        ],
+        "type": "object",
+        "properties": {
+          "imageType": {
+            "type": "string"
+          },
+          "confirmType": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "imageType": "itemHandoverToTravellerImageURL",
+          "confirmType": "reject"
+        }
+      },
+      "MyRequestRequest": {
+        "title": "MyRequestRequest",
+        "required": [
+          "secret"
+        ],
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "secret": "2r5u8x/A?D(G+KbPeSgVkYp3s6v9y$BH@McQfTjWmZq4t7w!z%C*F-JaNdRgU"
+        }
+      },
+      "devMyRequestRequest": {
+        "title": "devMyRequestRequest",
+        "required": [
+          "secret"
+        ],
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "secret": "2r5u8x/A?D(G+KbPeSgVkYp3s6v9y$BH@McQfTjWmZq4t7w!z%C*F-JaNdRgU"
+        }
+      }
+    },
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Spacr",
+      "description": ""
+    },
+    {
+      "name": "Spacr-aws",
+      "description": ""
+    }
+  ]
+}
