@@ -1,10 +1,10 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Insomnia",
-    "description": "",
+    "title": "Spacr Backend API Documentation",
+    "description": "This documentation covers the endpoints of the Spacr platform.",
     "contact": {},
-    "version": "1.0"
+    "version": "1.01"
   },
   "servers": [
     {
