@@ -4,7 +4,12 @@
     "title": "Spacr Backend API Documentation",
     "description": "This documentation covers the endpoints of the Spacr platform.",
     "contact": {},
-    "version": "1.01"
+    "version": "1.01",
+    "x-logo": {
+      "url": "https://wenogk.github.io/spacr-api-docs/logo_spacr.png",
+      "backgroundColor": "#0033A0",
+      "altText": "Spacr logo"
+    }
   },
   "servers": [
     {
